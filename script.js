@@ -4,8 +4,8 @@ function makeGrid(n) {
     let sqr = n * n;
     while (sqr > 0) {
         const pixel = document.createElement(`div`);
-        let unit = 500 / n;
-        pixel.style.cssText = `width: ${unit}px; height: ${unit}px;`;
+        let unit = 80 / n;
+        pixel.style.cssText = `width: ${unit}vh; height: ${unit}vh;`;
         pixel.className = `pixel`
         container.appendChild(pixel);
         sqr--;
