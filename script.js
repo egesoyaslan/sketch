@@ -1,6 +1,10 @@
 const container = document.querySelector(`.container`);
 
 function makeGrid(n) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    }
+    
     let sqr = n * n;
     while (sqr > 0) {
         const pixel = document.createElement(`div`);
