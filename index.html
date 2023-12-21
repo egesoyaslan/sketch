@@ -8,10 +8,27 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="settings">
-        <input type="text" id="user">
-        <button id="send">SET</button>
+    <div class="header">Etch-a-Sketch</div>
+    <div class="main">
+        <div class="leftMain">
+            <div class="innerLeft">
+                <div class="colors">
+                    <div id="black" class="color"></div>
+                    <div id="eraser" class="color"><img src="./eraser.png"></div>
+                    <div id="rainbow" class="color"><img src="./rainbow.jpg"></div>
+                </div>
+                <div class="settings">
+                    <div class="top">Enter grid value:</div>
+                    <div class="bottom">
+                        <input type="text" id="user">
+                        <button id="send">SET</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightMain">
+        <div class="container"></div>
+        </div>
     </div>
-    <div class="container"></div>
 </body>
 </html>

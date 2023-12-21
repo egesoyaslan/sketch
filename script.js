@@ -59,7 +59,7 @@ container.addEventListener('mouseover', (e) => {
 container.addEventListener('mouseout', (e) => {
     const target = e.target;
     if (target.classList.contains('pixel')) {
-        target.style.backgroundColor = 'white';
+        target.style.backgroundColor = '#F2F1EB';
     }
 });
 
