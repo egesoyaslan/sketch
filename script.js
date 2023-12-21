@@ -1,22 +1,29 @@
 const container = document.querySelector(`.container`);
 
 function makeGrid(n) {
-    while (n > 0) {
+    let sqr = n * n;
+    while (sqr > 0) {
         const pixel = document.createElement(`div`);
-        pixel.className = `pixel`;
+        let unit = 500 / n;
+        pixel.style.cssText = `width: ${unit}px; height: ${unit}px;`;
+        pixel.className = `pixel`
         container.appendChild(pixel);
-        n--;
+        sqr--;
     }
 }
 
-makeGrid(256);
+makeGrid(16);
 
-container.addEventListener(`mouseover`, (e) => {
-    const target = (e.target);
-    target.style.cssText = `background-color: gainsboro`
+container.addEventListener('mouseover', (e) => {
+    const target = e.target;
+    if (target.classList.contains('pixel')) {
+        target.style.backgroundColor = 'gainsboro';
+    }
 });
 
-container.addEventListener(`mouseout`, (e) => {
-    const target = (e.target);
-    target.style.cssText = `background-color: white`
+container.addEventListener('mouseout', (e) => {
+    const target = e.target;
+    if (target.classList.contains('pixel')) {
+        target.style.backgroundColor = 'white';
+    }
 });
