@@ -16,6 +16,8 @@ function makeGrid(n) {
     }
 }
 
+makeGrid(16);
+
 function getValue() {
     const field = document.querySelector(`#user`);
     const inputValue = field.value;
@@ -34,10 +36,23 @@ button.addEventListener(`click`, () => {
     }
 });
 
+let isMouseDown = false;
+
+container.addEventListener('mousedown', () => {
+    isMouseDown = true;
+});
+
+document.addEventListener('mouseup', () => {
+    isMouseDown = false;
+});
+
 container.addEventListener('mouseover', (e) => {
     const target = e.target;
-    if (target.classList.contains('pixel')) {
-        target.style.backgroundColor = 'gainsboro';
+    if (target.classList.contains('pixel') && isMouseDown) {
+        target.style.backgroundColor = 'black';
+        target.className = `painted`;
+    } else if (target.classList.contains('pixel')) {
+        target.style.backgroundColor = `gainsboro`;
     }
 });
 
@@ -45,5 +60,13 @@ container.addEventListener('mouseout', (e) => {
     const target = e.target;
     if (target.classList.contains('pixel')) {
         target.style.backgroundColor = 'white';
+    }
+});
+
+container.addEventListener(`mousedown`, (e) => {
+    const target = e.target;
+    if (target.classList.contains('pixel')) {
+        target.style.backgroundColor = 'black';
+        target.className = `painted`;
     }
 });
