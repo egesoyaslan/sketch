@@ -48,7 +48,10 @@ selector.addEventListener(`click`, (e) => {
     color = target.id;
     target.style.borderColor = `yellow`;
     
-
+    //Will delete this after making the rainbow function.
+    if (target.id === `rainbow`) {
+        color = `eraser`;
+    }
 });
 
 let isMouseDown = false;
