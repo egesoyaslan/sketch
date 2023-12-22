@@ -11,6 +11,7 @@ body {
 
 .container {
     display: flex;
+    background-color: #F2F1EB;
     height: 80vh;
     width: 80vh;
     flex-wrap: wrap;
@@ -19,7 +20,6 @@ body {
 }
 
 .pixel {
-    background-color: #F2F1EB;
     box-sizing: border-box;
     border: 0.5px solid gainsboro;
 }

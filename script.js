@@ -69,7 +69,7 @@ container.addEventListener('mouseover', (e) => {
     } else if (target.classList.contains('pixel')) {
         target.style.backgroundColor = `gainsboro`;
     } else if (target.classList.contains('painted') && isMouseDown && (color === `eraser`)) {
-        target.style.backgroundColor = `#F2F1EB`;
+        target.style.removeProperty(`background-color`);
         target.className = `pixel`;
     }
 });
@@ -87,7 +87,7 @@ container.addEventListener(`mousedown`, (e) => {
         target.style.backgroundColor = color;
         target.className = `painted`;
     } else if (target.classList.contains('painted') && (color === `eraser`)) {
-        target.style.backgroundColor = `#F2F1EB`;
+        target.style.removeProperty(`background-color`);
         target.className = `pixel`;
     }
 });
