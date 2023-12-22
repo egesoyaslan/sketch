@@ -51,6 +51,7 @@ body {
 
 #black {
     background-color: black;
+    border-color: yellow;
 }
 
 #eraser {

@@ -36,6 +36,21 @@ button.addEventListener(`click`, () => {
     }
 });
 
+let color = `black`;
+const selector = document.querySelector(`.colors`);
+selector.addEventListener(`click`, (e) => {
+    const target = e.target;
+
+    document.querySelectorAll('.color').forEach((element) => {
+        element.style.borderColor = '#88AB8E';
+    });
+
+    color = target.id;
+    target.style.borderColor = `yellow`;
+    
+
+});
+
 let isMouseDown = false;
 
 container.addEventListener('mousedown', () => {
@@ -49,7 +64,7 @@ document.addEventListener('mouseup', () => {
 container.addEventListener('mouseover', (e) => {
     const target = e.target;
     if (target.classList.contains('pixel') && isMouseDown) {
-        target.style.backgroundColor = 'black';
+        target.style.backgroundColor = color;
         target.className = `painted`;
     } else if (target.classList.contains('pixel')) {
         target.style.backgroundColor = `gainsboro`;
@@ -66,7 +81,7 @@ container.addEventListener('mouseout', (e) => {
 container.addEventListener(`mousedown`, (e) => {
     const target = e.target;
     if (target.classList.contains('pixel')) {
-        target.style.backgroundColor = 'black';
+        target.style.backgroundColor = color;
         target.className = `painted`;
     }
 });
