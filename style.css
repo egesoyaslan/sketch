@@ -14,12 +14,12 @@ body {
     height: 80vh;
     width: 80vh;
     flex-wrap: wrap;
-    background-color: #F2F1EB;
     border: 5px solid #88AB8E;
     border-radius: 8px;
 }
 
 .pixel {
+    background-color: #F2F1EB;
     box-sizing: border-box;
     border: 0.5px solid gainsboro;
 }

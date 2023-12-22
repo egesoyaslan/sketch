@@ -63,11 +63,14 @@ document.addEventListener('mouseup', () => {
 
 container.addEventListener('mouseover', (e) => {
     const target = e.target;
-    if (target.classList.contains('pixel') && isMouseDown) {
+    if (target.classList.contains('pixel') && isMouseDown && color !== `eraser`) {
         target.style.backgroundColor = color;
         target.className = `painted`;
     } else if (target.classList.contains('pixel')) {
         target.style.backgroundColor = `gainsboro`;
+    } else if (target.classList.contains('painted') && isMouseDown && (color === `eraser`)) {
+        target.style.backgroundColor = `#F2F1EB`;
+        target.className = `pixel`;
     }
 });
 
@@ -80,8 +83,11 @@ container.addEventListener('mouseout', (e) => {
 
 container.addEventListener(`mousedown`, (e) => {
     const target = e.target;
-    if (target.classList.contains('pixel')) {
+    if (target.classList.contains('pixel') && color !== `eraser`) {
         target.style.backgroundColor = color;
         target.className = `painted`;
+    } else if (target.classList.contains('painted') && (color === `eraser`)) {
+        target.style.backgroundColor = `#F2F1EB`;
+        target.className = `pixel`;
     }
 });
